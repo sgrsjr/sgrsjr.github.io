@@ -1,8 +1,8 @@
 $(function () {
     $("#submit-btn").click(submitted);
     $("#location-input").on('keypress', function (e) {
-        if (e.keyCode == 13) submitted();
-    })
+        if (e.keyCode === 13) submitted();
+    });
 
     var mainOffset = $(".main.section").offset();
     var sectionOffset = $(".details.section").offset();
@@ -37,7 +37,7 @@ function scrolled(mainOffset, sectionOffest) {
 function submitted() {
     var appid = 'appid=' + '307bf47f63f48e69bfd6a3b5130c5a2e' + '&';
     var city = 'q=' + document.getElementById("location-input").value + '&';
-    var url = 'http://api.openweathermap.org/data/2.5/weather?units=metric&' + appid + city;
+    var url = 'https://api.openweathermap.org/data/2.5/weather?units=metric&' + appid + city;
     var request = new XMLHttpRequest();
     request.open('GET', url);
     request.onload = function () {
@@ -52,7 +52,7 @@ function submitted() {
         console.log("Connection Error");
     };
     request.send();
-};
+}
 
 function renderHTML(data) {
     document.getElementById("location").innerHTML = data.name + ', ' + data.sys.country;
@@ -71,6 +71,6 @@ function renderHTML(data) {
     document.getElementById("sunrise").innerHTML = 'Sunrise ' + getTime(data.sys.sunrise).format_12 + ' AM';
     document.getElementById("sunset").innerHTML = 'Sunset ' + getTime(data.sys.sunset).format_12 + ' PM';
 
-};
+}
 
 
