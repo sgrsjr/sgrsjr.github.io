@@ -19,15 +19,15 @@ function scrolled(mainOffset, sectionOffest) {
 
     $("#status").html(amountScrolled - sectionOffest.top + mainSectionHeight);
 
-    // if (amountScrolled >= sectionOffest.top - mainSectionHeight) {
-    //
-    // }
-    // else
     if (amountScrolled >= mainOffset.top && amountScrolled < (sectionOffest.top - mainSectionHeight)) {
-        $(".main.section").css({"position": "fixed"});
+        $(".main.section").css({"position": "fixed", "top": 0 + "px"});
     }
     else {
-        $(".main.section").css({"position": "relative"});
+        $(".main.section").css({"position": "relative", "top": 0 + "px"});
+
+        if (amountScrolled >= (sectionOffest.top - mainSectionHeight)) {
+            $(".main.section").css({"top": sectionOffest.top - mainOffset.top - mainSectionHeight + "px"});
+        }
     }
 
 
