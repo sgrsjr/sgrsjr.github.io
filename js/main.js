@@ -7,32 +7,28 @@ $(function () {
     var mainOffset = $(".main.section").offset();
     var sectionOffset = $(".details.section").offset();
 
-    $(window).on('scroll', function () {
-        scrolled(mainOffset, sectionOffset);
-    });
-});
+    function scroller() {
+        var amountScrolled = $(document).scrollTop();
 
-function scrolled(mainOffset, sectionOffest) {
-    var amountScrolled = $(document).scrollTop();
+        var mainSectionHeight = $(".main.section").outerHeight();
 
-    var mainSectionHeight = $(".main.section").outerHeight();
+        $("#status").html(amountScrolled - sectionOffset.top + mainSectionHeight);
 
-    $("#status").html(amountScrolled - sectionOffest.top + mainSectionHeight);
-
-    if (amountScrolled >= mainOffset.top && amountScrolled < (sectionOffest.top - mainSectionHeight)) {
-        $(".main.section").css({"position": "fixed", "top": 0 + "px"});
-    }
-    else {
-        $(".main.section").css({"position": "relative", "top": 0 + "px"});
-
-        if (amountScrolled >= (sectionOffest.top - mainSectionHeight)) {
-            $(".main.section").css({"top": sectionOffest.top - mainOffset.top - mainSectionHeight + "px"});
+        if (amountScrolled >= mainOffset.top && amountScrolled < (sectionOffset.top - mainSectionHeight)) {
+            $(".main.section").css({"position": "fixed", "top": 0 + "px"});
         }
-    }
+        else {
+            $(".main.section").css({"position": "relative", "top": 0 + "px"});
 
+            if (amountScrolled >= (sectionOffset.top - mainSectionHeight)) {
+                $(".main.section").css({"top": sectionOffset.top - mainOffset.top - mainSectionHeight + "px"});
+            }
+        }
 
-}
-
+        requestAnimationFrame(scroller);
+    };
+    scroller();
+});
 
 function submitted() {
     var appid = 'appid=' + '307bf47f63f48e69bfd6a3b5130c5a2e' + '&';

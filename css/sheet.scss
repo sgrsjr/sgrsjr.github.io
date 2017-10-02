@@ -57,7 +57,6 @@ header {
     }
 }
 
-
 .header-small {
     transform: scaleY(0.5);
     div {
@@ -71,7 +70,6 @@ header {
         }
     }
 }
-
 
 .fixed-top-right {
     position: fixed;
@@ -93,11 +91,19 @@ header {
 
 }
 
-section {
+footer {
     position: relative;
-    top: 94vh;
+    top: 90vh;
     background: pink;
-    text-align: center;
-    padding: 25px;
     height: 2000px;
+    section {
+        border: 2px solid blue;
+        text-align: center;
+        background-color: cornflowerblue;
+
+    }
+    section.filler {
+        min-height: 100px;
+    }
+
 }
