@@ -1,22 +1,33 @@
 $(function () {
+    var $locationInput = $("#location-input");
+    var $searchBtn = $("#search-btn");
+    var $header = $("header");
+    var $headerSpan = $("header span");
+    var $footer = $("footer");
 
     // AJAX-ing the weather
-    $("#search-btn").click(submitted);
-    $("#location-input").on('keypress', function (e) {
+    $searchBtn.click(submitted);
+
+    $locationInput.on('keypress', function (e) {
         if (e.keyCode === 13) submitted();
     });
-
     // Animating the Header
-    var originalHeaderHeight = $("header").outerHeight();
+    var originalHeaderHeight = $header.outerHeight();
 
     function animateHeader() {
         var amountScrolled = $(window).scrollTop();
-        var foooterOffset = $("footer").offset().top - amountScrolled;
-        if (foooterOffset < originalHeaderHeight) {
-            $("header").addClass("header-small");
+        var footerOffset = $footer.offset().top - amountScrolled;
+        if (amountScrolled > 3 * originalHeaderHeight) {
+            $header.addClass("header-small");
+            if (footerOffset < 0.5 * originalHeaderHeight) {
+                $header.addClass("header-minimal");
+            }
         }
         else {
-            $("header").removeClass("header-small");
+            $header.removeClass("header-small");
+            if ($header.has("header-minimal")) {
+                $header.removeClass("header-minimal");
+            }
         }
         requestAnimationFrame(animateHeader);
     }
@@ -24,7 +35,6 @@ $(function () {
     animateHeader();
 
 });
-
 
 function submitted() {
     var appid = 'appid=' + '307bf47f63f48e69bfd6a3b5130c5a2e' + '&';
@@ -85,4 +95,3 @@ function getTime(UNIX_timestamp) {
         "format_12": a.getHours() % 12 + ':' + a.getMinutes()
     };
 }
-
