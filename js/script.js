@@ -10,8 +10,10 @@ $(function () {
         var sectionOffset = $("section").offset().top - amountScrolled;
         if (sectionOffset < originalHeaderHeight) {
             $("header").addClass("header-small");
+            // $("header").children().removeClass("header-small");
         }
         else {
+            // $("header").children().addClass("header-small");
             $("header").removeClass("header-small");
         }
 
