@@ -4,27 +4,25 @@ $(function () {
     // $("header").append('<div id="status-2"></div>');
 
     var originalHeaderHeight = $("header").outerHeight();
-
-    $(window).on('scroll', function () {
+    function animateHeader() {
 
         var amountScrolled = $(window).scrollTop();
         var sectionOffset = $("section").offset().top - amountScrolled;
-        var headerHeight = $("header").outerHeight();
-
         if (sectionOffset < originalHeaderHeight) {
-            var headerHeight = $("header").outerHeight();
-            var newHeight = headerHeight + sectionOffset - headerHeight;
-            $("header").css({"height": newHeight});
-
-            // $("#search-img").addClass("fixed-top-right");
+            $("header").addClass("header-small");
         }
         else {
-            $("header").css({"height": originalHeaderHeight});
-            // $("#search-img").removeClass("fixed-top-right");
+            $("header").removeClass("header-small");
         }
-
 
         // $("#status-1").html(amountScrolled);
         // $("#status-2").html(sectionOffset - headerHeight);
-    })
+
+        requestAnimationFrame(animateHeader);
+    }
+    animateHeader();
+
+
+
+
 })
