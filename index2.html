@@ -16,11 +16,24 @@
     <header>
         <div id="header-span">
             <input id="location-input" value="Delhi">
-            <img id="search-img" src="img/search.svg">
+            <img id="search-btn" src="img/search.svg">
         </div>
     </header>
     <div class="banner">
-        Banner
+        <div class="main-info">
+            <h4 id="date"></h4>
+            <div>
+                <object id="weather-img" type="image/svg+xml" data='img/weather-img/set-1/default.svg'></object>
+                <div>
+                    <div id="wrapper-temps">
+                        <h4 id="temp-max" class="temps">Hi</h4>
+                        <h4 id="temp-min" class="temps"></h4>
+                    </div>
+                    <h3 id="weather-desc"></h3>
+                </div>
+            </div>
+            <h1 id="temp"></h1>
+        </div>
     </div>
     <section>
         Section
