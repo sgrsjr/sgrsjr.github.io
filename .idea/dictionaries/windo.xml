@@ -5,6 +5,8 @@
       <w>browsehappy</w>
       <w>browserupgrade</w>
       <w>modernizr</w>
+      <w>msapplication</w>
+      <w>navbutton</w>
       <w>onload</w>
     </words>
   </dictionary>
