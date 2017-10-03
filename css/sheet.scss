@@ -126,13 +126,25 @@ header {
 footer {
     position: relative;
     top: 90vh;
-    background: pink;
+    background: $baseColor;
     height: 2000px;
     section {
-        border-top: $borderColor;
+        border-top: 1px solid $baseColor;
         text-align: center;
         background-color: $headerColor;
+        padding: 20px;
 
+        h4 {
+            text-align: left;
+            color: $borderColor;
+            font-family: "Calibri Light";
+            p {
+                margin: 0;
+                display: inline-block;
+                padding: .2em 1em .2em 3em;
+                color: $baseColor;
+            }
+        }
     }
     section.filler {
         min-height: 100px;
