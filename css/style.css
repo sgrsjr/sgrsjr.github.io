@@ -3,13 +3,14 @@
   transition: 300ms; }
 
 html {
+  height: 100vh;
   background: white;
   font-size: 22px; }
 
 body {
   background: #8D8D8D;
   margin: 0 auto;
-  max-width: 100vw; }
+  height: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial;
@@ -133,25 +134,26 @@ header {
           font-size: .6em; }
 
 footer {
+  font-size: 1rem;
   position: relative;
   top: 30rem;
-  background: #8D8D8D;
-  height: 2000px; }
+  background: #8D8D8D; }
   footer section {
-    border-top: 1px solid #8D8D8D;
-    text-align: center;
+    font-size: .8em;
+    border-top: 0.05em solid #8D8D8D;
     background-color: #222222;
-    padding: 20px; }
+    padding: 1em 1em 1em 2em; }
     footer section h4 {
       text-align: left;
       color: white;
-      font-family: "Calibri Light"; }
+      font-family: "Calibri Light";
+      margin: 0.1em; }
       footer section h4 p {
+        padding-right: 1em;
         margin: 0;
         display: inline-block;
-        padding: .2em 1em .2em 3em;
         color: #8D8D8D; }
   footer section.filler {
-    min-height: 100px; }
+    min-height: 4em; }
 
 /*# sourceMappingURL=style.css.map */
