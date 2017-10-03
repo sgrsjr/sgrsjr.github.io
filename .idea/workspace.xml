@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88617400-a2f2-46ed-9b03-9ef8bf62bd1a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
@@ -19,8 +20,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -776,7 +777,7 @@
       <workItem from="1506833651153" duration="425000" />
       <workItem from="1506834751635" duration="23039000" />
       <workItem from="1506936502337" duration="23151000" />
-      <workItem from="1506966720301" duration="5044000" />
+      <workItem from="1506966720301" duration="5514000" />
     </task>
     <task id="LOCAL-00001" summary="now using jQuery CDN(compressed)">
       <created>1506708319562</created>
@@ -876,11 +877,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507002698923</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="removed 'stylesheet' from &lt;href&gt; to 'style.scss'">
+      <created>1507002802116</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1507002802116</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167496000" />
+    <option name="totallyTimeSpent" value="167966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1149" height="867" extended-state="0" />
@@ -969,7 +977,8 @@
     <MESSAGE value="Migrated to new Layout&#10;-old files in 'old' folder&#10;-renamed 'index2.html' to 'index.html'.&#10;-renamed 'script.js' to 'main.js'.&#10;-Removed many warnings." />
     <MESSAGE value="-" />
     <MESSAGE value="Renamed 'sheet.css' to 'style.css'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed 'sheet.css' to 'style.css'" />
+    <MESSAGE value="removed 'stylesheet' from &lt;href&gt; to 'style.scss'" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed 'stylesheet' from &lt;href&gt; to 'style.scss'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1292,8 +1301,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
           <folding />
         </state>
       </provider>
