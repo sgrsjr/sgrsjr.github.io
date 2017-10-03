@@ -1,4 +1,4 @@
-@import "sheet2";
+@import "style2";
 
 $headerColor: #222222;
 $baseColor: #8D8D8D;
@@ -50,7 +50,7 @@ header {
 
         input {
             box-sizing: border-box;
-            border: 0px solid $baseColor;
+            border: 0 solid $baseColor;
             border-right: 0;
             text-align: center;
             height: 100%;
@@ -71,7 +71,7 @@ header {
         }
         img#search-btn {
             box-sizing: border-box;
-            border: 0px solid $baseColor;
+            border: 0 solid $baseColor;
             border-left: 0;
             display: block;
             float: right;
