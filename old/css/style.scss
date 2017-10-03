@@ -1,4 +1,4 @@
-@import "style2.scss";
+@import "style2";
 
 html, body {
     overflow-x: hidden;
@@ -56,22 +56,19 @@ html, body {
             font: $fontSize $font;
             width: 80%;
             border: 1px solid $color;
-            border-right: 0px;
-            border-radius: 7px 0px 0px 7px;
-            outline: 0px;
+            border-right: 0;
+            border-radius: 7px 0 0 7px;
+            outline: 0;
             text-align: center;
         }
         #submit-btn {
-            background-color: white;
-            background-image: url("../img/search.svg");
-            background-repeat: no-repeat;
-            background-position: center;
+            background: white url("../../img/search.svg") no-repeat center;
             background-size: 50%;
             width: 20%;
             border: 1px solid $color;
-            border-left: 0px;
-            border-radius: 0px 7px 7px 0px;
-            outline: 0px;
+            border-left: 0;
+            border-radius: 0 7px 7px 0;
+            outline: 0;
         }
 
     }
@@ -98,7 +95,7 @@ html, body {
                 align-self: center;
                 height: 9*$fontSize;
                 width: 9*$fontSize;
-                border: 0px;
+                border: 0;
             }
             > div {
                 display: flex;
