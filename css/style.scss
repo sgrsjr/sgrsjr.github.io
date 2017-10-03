@@ -6,7 +6,7 @@ $fontSize: 20px;
 $fontFamily: Arial;
 
 @mixin bp-small {
-    @media only screen and (max-width: 360) {
+    @media only screen and (max-width: 360px) {
         @content
     }
 }
@@ -124,28 +124,92 @@ header {
 
 }
 
-.fixed-top-right {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    height: 30px;
-}
-
 .banner {
+    font-size: 1rem;
     box-sizing: border-box;
     position: fixed;
     top: 0;
-    bottom: 0;
-    padding: 15vh;
     width: 100%;
-    background: $baseColor;
+    padding-top: 4.68em;
+    padding-right: 0;
+    padding-left: 0;
     text-align: center;
+
+    > div {
+        height: 100%;
+        bottom: 0;
+
+        * {
+            //border: 1px solid yellow;
+        }
+
+        > h4 {
+            text-align: left;
+            padding: 1em 1em 0.5em;
+        }
+        > div {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5em 1em 1em;
+
+            div:first-child {
+                font-size: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: left;
+
+                *{
+                    //border: 1px solid greenyellow;
+                }
+                h4 {
+                    font-size: .7em;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    p {
+                        margin: 0;
+                        padding-right:.3em;
+                    }
+                    p:first-child {
+                        font-size: .8em;
+                    }
+                    p:last-child {
+                        transform: translate3d(-0.1em, -0.15em, 0);
+                    }
+                }
+                h1 {
+                    font-size: 3em;
+                    display: flex;
+                    align-items: flex-start;
+                    p {
+                        font-size: .7em;
+
+                        display: inline-block;
+                        margin:0;
+                    }
+                    p:last-child {
+                        font-size: .7em;
+                    }
+                }
+            }
+            div:last-child {
+                font-size: 1rem;
+                object {
+                    height: 5em;
+                }
+                h3 {
+                    font-size: .6em;
+                }
+            }
+        }
+    }
 
 }
 
 footer {
     position: relative;
-    top: 90vh;
+    top: 30rem;
     background: $baseColor;
     height: 2000px;
     section {

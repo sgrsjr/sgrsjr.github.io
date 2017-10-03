@@ -11,6 +11,8 @@ $(function () {
     $locationInput.on('keypress', function (e) {
         if (e.keyCode === 13) submitted();
     });
+    submitted();
+
     // Animating the Header
     var originalHeaderHeight = $header.outerHeight();
 
@@ -56,11 +58,11 @@ function renderHTML(data) {
     document.getElementById("location").innerHTML = '<p>Location:</p>' + data.name + ', ' + data.sys.country;
     document.getElementById("weather-desc").innerHTML = data.weather[0].main;
     $("#weather-img").attr("data", 'img/weather-img/set-1/' + data.weather[0].icon + '.svg');
-    document.getElementById("temp").innerHTML = data.main.temp + '°c';
+    document.getElementById("temp").innerHTML = data.main.temp + '<p>°</p><p>c</p>';
     document.getElementById("pressure").innerHTML = '<p>Pressure:</p>' + data.main.pressure + ' mBar';
     document.getElementById("humidity").innerHTML = '<p>Humidity:</p>' + data.main.humidity + '%';
-    document.getElementById("temp-min").innerHTML = data.main.temp_min + '°c ↓';
-    document.getElementById("temp-max").innerHTML = data.main.temp_max + '°c ↑';
+    document.getElementById("temp-min").innerHTML = '<p>Night</p><p>' + data.main.temp_min + '°</p><p>↓</p>';
+    document.getElementById("temp-max").innerHTML = '<p>Day</p><p>' + data.main.temp_max + '°</p><p>↑</p>';
     document.getElementById("visibility").innerHTML = '<p>Visibility:</p>' + data.visibility / 1000 + ' km';
     document.getElementById("wind-speed").innerHTML = '<p>Wind Speed:</p>' + ((data.wind.speed * 18) / 5).toFixed(2) + ' km/h';
     document.getElementById("wind-deg").innerHTML = '<p>Wind Direction:</p>' + data.wind.deg + '°';

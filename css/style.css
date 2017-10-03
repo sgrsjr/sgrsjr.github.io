@@ -77,25 +77,64 @@ header {
   .header-small span:hover {
     pointer-events: none; }
 
-.fixed-top-right {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  height: 30px; }
-
 .banner {
+  font-size: 1rem;
   box-sizing: border-box;
   position: fixed;
   top: 0;
-  bottom: 0;
-  padding: 15vh;
   width: 100%;
-  background: #8D8D8D;
+  padding-top: 4.68em;
+  padding-right: 0;
+  padding-left: 0;
   text-align: center; }
+  .banner > div {
+    height: 100%;
+    bottom: 0; }
+    .banner > div > h4 {
+      text-align: left;
+      padding: 1em 1em 0.5em; }
+    .banner > div > div {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5em 1em 1em; }
+      .banner > div > div div:first-child {
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left; }
+        .banner > div > div div:first-child h4 {
+          font-size: .7em;
+          display: flex;
+          flex-direction: row;
+          align-items: center; }
+          .banner > div > div div:first-child h4 p {
+            margin: 0;
+            padding-right: .3em; }
+          .banner > div > div div:first-child h4 p:first-child {
+            font-size: .8em; }
+          .banner > div > div div:first-child h4 p:last-child {
+            transform: translate3d(-0.1em, -0.15em, 0); }
+        .banner > div > div div:first-child h1 {
+          font-size: 3em;
+          display: flex;
+          align-items: flex-start; }
+          .banner > div > div div:first-child h1 p {
+            font-size: .7em;
+            display: inline-block;
+            margin: 0; }
+          .banner > div > div div:first-child h1 p:last-child {
+            font-size: .7em; }
+      .banner > div > div div:last-child {
+        font-size: 1rem; }
+        .banner > div > div div:last-child object {
+          height: 5em; }
+        .banner > div > div div:last-child h3 {
+          font-size: .6em; }
 
 footer {
   position: relative;
-  top: 90vh;
+  top: 30rem;
   background: #8D8D8D;
   height: 2000px; }
   footer section {
