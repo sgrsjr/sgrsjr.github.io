@@ -271,13 +271,18 @@ footer {
 
 .has-chart {
     box-sizing: border-box;
+    position: fixed;
+    top:20rem;
+    height: 10rem;
     width: 100%;
     //border: solid;
     > div {
         //border: red solid;
         width: 100%;
+        height:100%;
         overflow: auto;
         > div {
+            height: 100%;
             //border: greenyellow solid;
             width:60em;
             canvas {
