@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="88617400-a2f2-46ed-9b03-9ef8bf62bd1a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css.map" afterPath="$PROJECT_DIR$/css/style.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.scss" afterPath="$PROJECT_DIR$/css/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,21 +26,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
+            <state relative-caret-position="3101">
               <caret line="274" column="14" lean-forward="false" selection-start-line="274" selection-start-column="14" selection-end-line="274" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+            <state relative-caret-position="563">
+              <caret line="142" column="95" lean-forward="false" selection-start-line="142" selection-start-column="95" selection-end-line="142" selection-end-column="95" />
               <folding>
                 <element signature="n#!!block;n#submit#0" expanded="false" />
                 <element signature="n#!!block;n#renderHTML#0" expanded="false" />
@@ -105,9 +102,9 @@
         <option value="$PROJECT_DIR$/old/index.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/css/style2.scss" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/style.scss" />
+        <option value="$PROJECT_DIR$/js/main.js" />
       </list>
     </option>
   </component>
@@ -989,11 +986,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507227411531</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Fixed 'temp-chart' positioning.">
+      <created>1507228481500</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1507228481500</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236340000" />
+    <option name="totallyTimeSpent" value="236818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1204" height="867" extended-state="0" />
@@ -1133,7 +1137,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed unused files by adding them to &quot;.gitignore&quot;" />
     <MESSAGE value="Starting from scratch in new &quot;index2.html&quot;" />
     <MESSAGE value="Now using 'requestAnimationFrame()' instead of listening for scroll&#10;Animating the header using transform property instead of changing the 'height' property." />
     <MESSAGE value="Added search bar to header&#10;-Added animation to it &lt;3" />
@@ -1158,7 +1161,8 @@
     <MESSAGE value="deleted directory 'old'" />
     <MESSAGE value="Added a chart using ChartJS." />
     <MESSAGE value="Moved the 'temp-chart' to the banner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved the 'temp-chart' to the banner" />
+    <MESSAGE value="Fixed 'temp-chart' positioning." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed 'temp-chart' positioning." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1471,20 +1475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#submit#0" expanded="false" />
-            <element signature="n#!!block;n#renderHTML#0" expanded="false" />
-            <element signature="n#!!block;n#animate#0" expanded="false" />
-            <element signature="n#!!block;n#animateHeader#0" expanded="false" />
-            <element signature="n#!!block;n#getTime#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
@@ -1495,9 +1485,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
+        <state relative-caret-position="3101">
           <caret line="274" column="14" lean-forward="false" selection-start-line="274" selection-start-column="14" selection-end-line="274" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="142" column="95" lean-forward="false" selection-start-line="142" selection-start-column="95" selection-end-line="142" selection-end-column="95" />
+          <folding>
+            <element signature="n#!!block;n#submit#0" expanded="false" />
+            <element signature="n#!!block;n#renderHTML#0" expanded="false" />
+            <element signature="n#!!block;n#animate#0" expanded="false" />
+            <element signature="n#!!block;n#animateHeader#0" expanded="false" />
+            <element signature="n#!!block;n#getTime#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
