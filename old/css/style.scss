@@ -1,0 +1,123 @@
+@import "style2";
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+#status {
+    margin: 0;
+    position: fixed;
+    z-index: 1;
+    background: $color;
+    font-size: small;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    border-top: 1px solid transparentize($color, .7);
+}
+
+.filler {
+    height: 200px;
+}
+
+.main-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    min-height: 220px;
+    background: transparentize($color, .8);
+
+    nav {
+        box-sizing: border-box;
+        width: 100%;
+        height: 3.5*$fontSize;
+        padding: 0.5*$fontSize;
+        display: flex;
+
+        @include bp-desktop {
+            width: 400px;
+        }
+
+        input[type="text"] {
+            font: $fontSize $font;
+            width: 80%;
+            border: 1px solid $color;
+            border-right: 0;
+            border-radius: 7px 0 0 7px;
+            outline: 0;
+            text-align: center;
+        }
+        #submit-btn {
+            background-color: white;
+            background-image: url("../../img/search.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 50%;
+            width: 20%;
+            border: 1px solid $color;
+            border-left: 0;
+            border-radius: 0 7px 7px 0;
+            outline: 0;
+        }
+
+    }
+
+    .main.section {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        h1#temp {
+            position: relative;
+            font-size: 4*$fontSize;
+        }
+
+        > div {
+            //border:2px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            #weather-img {
+                margin: $fontSize;
+                align-self: center;
+                height: 9*$fontSize;
+                width: 9*$fontSize;
+                border: 0px;
+            }
+            > div {
+                display: flex;
+                flex-direction: column;
+                height: 70%;
+                > div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                }
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
