@@ -30,14 +30,14 @@ $fontFamily: Arial;
 
 html {
     height: 100%;
-    background: white;
+    background: blue;
     font-size: 22px;
 }
 
 body {
     background: $baseColor;
     margin: 0 auto;
-    height: 100%;
+    height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -157,9 +157,6 @@ header {
                 justify-content: space-between;
                 text-align: left;
 
-                * {
-                    //border: 1px solid greenyellow;
-                }
                 h4 {
                     font-size: .7em;
                     display: flex;
@@ -215,19 +212,25 @@ footer {
     position: relative;
     top: 30rem;
     background: $baseColor;
-    //height: 100%;
 
     section {
         font-size: .8em;
         border-top: .05em solid $baseColor;
         background-color: $headerColor;
-        padding: 1em 1em 1em 2em;
+        padding: 2em 2em 2em 2em;
+
+        h3 {
+            font-size: 1em;
+            color: $borderColor;
+            font-family: "Calibri Light";
+            margin-bottom: 1em;
+        }
 
         h4 {
+            font-size: 1em;
             text-align: left;
             color: $borderColor;
             font-family: "Calibri Light";
-            margin: 0.1em;
             p {
                 padding-right: 1em;
                 margin: 0;
