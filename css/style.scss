@@ -242,4 +242,29 @@ footer {
     section.filler {
         min-height: 4em;
     }
+    section.has-card {
+
+        > div {
+            height: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+            overflow: auto;
+            white-space: nowrap;
+            span.card {
+                display: inline-block;
+                border: 1px solid;
+                background-color: $baseColor;
+                p {
+
+                }
+                img {
+                    height: 2em;
+                }
+                h6 {
+
+                }
+            }
+        }
+    }
 }

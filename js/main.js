@@ -4,7 +4,6 @@ $(function () {
 
     // Animations
     animate();
-
 });
 
 function submit() {
@@ -30,7 +29,59 @@ function submitted() {
         error: function () {
             console.log("Error AJAX-ing the JSON");
         }
+    });
+
+    $.ajax({
+        type: 'GET',
+        url: 'https://api.openweathermap.org/data/2.5/forecast?units=metric&' + appid + city,
+        success: function (result) {
+            console.log(result);
+
+            // for (i = 1; i < result.list.length; i++) {
+            //     console.log(result.list[i].dt_txt);
+            // }
+
+            var myJSON = {
+                cnt: 0,
+                start: 0,
+                temps: []
+            };
+
+            var n = 15;
+            for (var i = 0; i < n; i++) {
+                if (i === 0) {
+                    myJSON.start = result.list[0].dt;
+                }
+                var temp = {};
+                temp[0] = result.list[i].main.temp;
+                temp[1] = result.list[i].weather[0].icon;
+                myJSON.temps.push(temp);
+                myJSON.cnt++;
+            }
+            console.log(myJSON);
+            render(myJSON);
+        },
+        error: function () {
+            console.log("Error AJAX-ing the bigJSON");
+        }
     })
+}
+
+function render(data) {
+    var $ele = $("#temp-section").find("> div");
+
+    for (var i = 0; i < data.cnt; i++) {
+        var cardData = '<p>' + data.temps[i][0] + '°</p>';
+        var cardImg = '<img src="img/weather-img/set-1/' + data.temps[i][1] + '.svg"/>';
+        var time = getTime(data.start + (i * 10800)).HH;
+        var cardTime = '<h6>' + (((time % 12) + (time / 12 > 1 ? " PM" : " AM"))) + '</h6>';
+        $ele.append('<span class="card">' + ( cardData + cardImg + cardTime) + '</span>');
+    }
+
+    // $ele.style.paddingBottom = ($ele.offsetHeight - $ele.clientHeight) + 'px';
+    // console.log(($ele.offsetHeight - $ele.clientHeight));
+    console.log($ele);
+
 }
 
 function renderHTML(data) {

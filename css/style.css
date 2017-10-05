@@ -165,5 +165,18 @@ footer {
         color: #8D8D8D; }
   footer section.filler {
     min-height: 4em; }
+  footer section.has-card > div {
+    height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap; }
+    footer section.has-card > div span.card {
+      display: inline-block;
+      border: 1px solid;
+      background-color: #8D8D8D; }
+      footer section.has-card > div span.card img {
+        height: 2em; }
 
 /*# sourceMappingURL=style.css.map */
