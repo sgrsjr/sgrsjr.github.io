@@ -3,6 +3,7 @@ $(function () {
     var $searchBtn = $("#search-btn");
     var $header = $("header");
     var $headerSpan = $("header span");
+    var $mainInfo = $("#main-info");
     var $footer = $("footer");
 
     // AJAX-ing the weather
@@ -21,12 +22,14 @@ $(function () {
         var footerOffset = $footer.offset().top - amountScrolled;
         if (amountScrolled > 3 * originalHeaderHeight) {
             $header.addClass("header-small");
+            $mainInfo.addClass("main-small");
             if (footerOffset < 0.5 * originalHeaderHeight) {
                 $header.addClass("header-minimal");
             }
         }
         else {
             $header.removeClass("header-small");
+            $mainInfo.removeClass("main-small");
             if ($header.has("header-minimal")) {
                 $header.removeClass("header-minimal");
             }
