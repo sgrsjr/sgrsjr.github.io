@@ -1,45 +1,21 @@
 $(function () {
+    // Add Listeners for submit.
+    submit();
+
+    // Animations
+    animate();
+
+});
+
+function submit() {
     var $locationInput = $("#location-input");
     var $searchBtn = $("#search-btn");
-    var $header = $("header");
-    var $headerSpan = $("header span");
-    var $mainInfo = $("#main-info");
-    var $footer = $("footer");
-
-    // AJAX-ing the weather
     $searchBtn.click(submitted);
-
     $locationInput.on('keypress', function (e) {
         if (e.keyCode === 13) submitted();
     });
     submitted();
-
-    // Animating the Header
-    var originalHeaderHeight = $header.outerHeight();
-
-    function animateHeader() {
-        var amountScrolled = $(window).scrollTop();
-        var footerOffset = $footer.offset().top - amountScrolled;
-        if (amountScrolled > 3 * originalHeaderHeight) {
-            $header.addClass("header-small");
-            $mainInfo.addClass("main-small");
-            if (footerOffset < 0.5 * originalHeaderHeight) {
-                $header.addClass("header-minimal");
-            }
-        }
-        else {
-            $header.removeClass("header-small");
-            $mainInfo.removeClass("main-small");
-            if ($header.has("header-minimal")) {
-                $header.removeClass("header-minimal");
-            }
-        }
-        requestAnimationFrame(animateHeader);
-    }
-
-    animateHeader();
-
-});
+}
 
 function submitted() {
     var appid = 'appid=' + '307bf47f63f48e69bfd6a3b5130c5a2e' + '&';
@@ -74,6 +50,37 @@ function renderHTML(data) {
     document.getElementById("sunrise").innerHTML = '<p>Sunrise:</p>' + getTime(data.sys.sunrise).format_12 + ' AM';
     document.getElementById("sunset").innerHTML = '<p>Sunset:</p>' + getTime(data.sys.sunset).format_12 + ' PM';
 
+}
+
+function animate() {
+    var $header = $("header");
+    var $footer = $("footer");
+    var $mainInfo = $("#main-info");
+    var originalHeaderHeight = $header.outerHeight();
+
+    animateHeader($header, $footer, $mainInfo, originalHeaderHeight);
+}
+
+function animateHeader($header, $footer, $mainInfo, originalHeaderHeight) {
+    var amountScrolled = $(window).scrollTop();
+    var footerOffset = $footer.offset().top - amountScrolled;
+    if (amountScrolled > 3 * originalHeaderHeight) {
+        $header.addClass("header-small");
+        $mainInfo.addClass("main-small");
+        if (footerOffset < 0.5 * originalHeaderHeight) {
+            $header.addClass("header-minimal");
+        }
+    }
+    else {
+        $header.removeClass("header-small");
+        $mainInfo.removeClass("main-small");
+        if ($header.has("header-minimal")) {
+            $header.removeClass("header-minimal");
+        }
+    }
+    requestAnimationFrame(function () {
+        animateHeader($header, $footer, $mainInfo, originalHeaderHeight);
+    });
 }
 
 function getTime(UNIX_timestamp) {
