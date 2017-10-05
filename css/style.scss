@@ -136,7 +136,7 @@ header {
     padding-left: 0;
     text-align: center;
 
-    > div {
+    div#main-info {
         height: 100%;
         bottom: 0;
         transition: 300ms linear;
@@ -270,13 +270,20 @@ footer {
 }
 
 .has-chart {
+    box-sizing: border-box;
+    width: 100%;
+    //border: solid;
     > div {
+        //border: red solid;
         width: 100%;
         overflow: auto;
         > div {
-            height: 10em;
-            width: 80em;
+            //border: greenyellow solid;
+            width:60em;
+            canvas {
+                //padding: 1em;
+            }
         }
-    }
 
+    }
 }

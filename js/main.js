@@ -90,9 +90,10 @@ function render(jsonData) {
         temps.push(temp);
     }
 
-    var $ele = $("#ele").find("> div > div");
     var $canvas = $("<canvas/>");
-    $ele.append($canvas);
+    var $tempChart = $("#temp-chart");
+    $tempChart.append('<div><div></div></div>');
+    $tempChart.find("> div > div").append($canvas);
 
     var chart = new Chart($canvas, {
         type: 'line',
