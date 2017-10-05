@@ -179,4 +179,11 @@ footer {
       footer section.has-card > div span.card img {
         height: 2em; }
 
+.has-chart > div {
+  width: 100%;
+  overflow: auto; }
+  .has-chart > div > div {
+    height: 10em;
+    width: 80em; }
+
 /*# sourceMappingURL=style.css.map */

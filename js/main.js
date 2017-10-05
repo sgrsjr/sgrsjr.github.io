@@ -67,21 +67,84 @@ function submitted() {
     })
 }
 
-function render(data) {
-    var $ele = $("#temp-section").find("> div");
+function render(jsonData) {
+    var $tempSection = $("#temp-section").find("> div");
 
-    for (var i = 0; i < data.cnt; i++) {
-        var cardData = '<p>' + data.temps[i][0] + '°</p>';
-        var cardImg = '<img src="img/weather-img/set-1/' + data.temps[i][1] + '.svg"/>';
-        var time = getTime(data.start + (i * 10800)).HH;
+    for (var i = 0; i < jsonData.cnt; i++) {
+        var cardData = '<p>' + jsonData.temps[i][0] + '°</p>';
+        var cardImg = '<img src="img/weather-img/set-1/' + jsonData.temps[i][1] + '.svg"/>';
+        var time = getTime(jsonData.start + (i * 10800)).HH;
         var cardTime = '<h6>' + (((time % 12) + (time / 12 > 1 ? " PM" : " AM"))) + '</h6>';
-        $ele.append('<span class="card">' + ( cardData + cardImg + cardTime) + '</span>');
+        $tempSection.append('<span class="card">' + ( cardData + cardImg + cardTime) + '</span>');
     }
 
-    // $ele.style.paddingBottom = ($ele.offsetHeight - $ele.clientHeight) + 'px';
-    // console.log(($ele.offsetHeight - $ele.clientHeight));
-    console.log($ele);
+    // Chart
 
+    var labels = [];
+    var temps = [];
+    for (var i = 0; i < jsonData.cnt; i++) {
+        var temp = jsonData.temps[i][0];
+        var time = getTime(jsonData.start + (i * 10800)).HH;
+        var label = '' + (((time % 12) + (time / 12 > 1 ? " PM" : " AM")));
+        labels.push(label);
+        temps.push(temp);
+    }
+
+    var $ele = $("#ele").find("> div > div");
+    var $canvas = $("<canvas/>");
+    $ele.append($canvas);
+
+    var chart = new Chart($canvas, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                data: temps,
+                pointRadius: 0
+            }]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            tooltips: {
+                enabled: false
+            },
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    display: false,
+                    gridLines: {
+                        display: false
+                    }
+                }],
+                xAxes: [{
+                    display: false,
+                    gridLines: {
+                        display: false
+                    }
+                }]
+            },
+            animation: {
+                onComplete: function () {
+                    // render the value of the chart above the bar
+                    var ctx = this.chart.ctx;
+                    ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 'normal', Chart.defaults.global.defaultFontFamily);
+                    ctx.fillStyle = this.chart.config.options.defaultFontColor;
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+                    this.data.datasets.forEach(function (dataset) {
+                        for (var i = 0; i < dataset.data.length; i++) {
+                            var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model;
+                            ctx.fillText(dataset.data[i].toFixed(0) + '°', model.x, model.y - 10);
+                        }
+                    });
+
+                }
+            }
+        }
+    });
+    console.log(chart);
 }
 
 function renderHTML(data) {
