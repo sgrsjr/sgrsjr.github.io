@@ -68,21 +68,21 @@ function submitted() {
 }
 
 function render(jsonData) {
-    console.log("hi");
-    var $tempSection = $("#temp-section").find("> div");
-
-    for (var i = 0; i < jsonData.cnt; i++) {
-        var cardData = '<p>' + jsonData.temps[i][0] + '°</p>';
-        var cardImg = '<img src="img/weather-img/set-1/' + jsonData.temps[i][1] + '.svg"/>';
-        var time = getTime(jsonData.start + (i * 10800)).HH;
-        var cardTime = '<h6>' + (((time % 12) + (time / 12 > 1 ? " PM" : " AM"))) + '</h6>';
-        if (i === 0) {
-            $tempSection.html('<span class="card">' + ( cardData + cardImg + cardTime) + '</span>');
-        }
-        else {
-            $tempSection.append('<span class="card">' + ( cardData + cardImg + cardTime) + '</span>');
-        }
-    }
+    // console.log("hi");
+    // var $tempSection = $("#temp-section").find("> div");
+    //
+    // for (var i = 0; i < jsonData.cnt; i++) {
+    //     var cardData = '<p>' + jsonData.temps[i][0] + '°</p>';
+    //     var cardImg = '<img src="img/weather-img/set-1/' + jsonData.temps[i][1] + '.svg"/>';
+    //     var time = getTime(jsonData.start + (i * 10800)).HH;
+    //     var cardTime = '<h6>' + (((time % 12) + (time / 12 > 1 ? " PM" : " AM"))) + '</h6>';
+    //     if (i === 0) {
+    //         $tempSection.html('<span class="card">' + ( cardData + cardImg + cardTime) + '</span>');
+    //     }
+    //     else {
+    //         $tempSection.append('<span class="card">' + ( cardData + cardImg + cardTime) + '</span>');
+    //     }
+    // }
 
     // Chart
 
@@ -91,10 +91,12 @@ function render(jsonData) {
     for (var i = 0; i < jsonData.cnt; i++) {
         var temp = jsonData.temps[i][0];
         var time = getTime(jsonData.start + (i * 10800)).HH;
-        var label = '' + (((time % 12) + (time / 12 > 1 ? " PM" : " AM")));
+        var label = (((time % 12) + (time / 12 > 1 ? " PM" : " AM")));
         labels.push(label);
         temps.push(temp);
     }
+
+    console.log(labels);
 
     var $canvas = $("<canvas/>");
     var $tempChart = $("#temp-chart");
@@ -111,6 +113,14 @@ function render(jsonData) {
             }]
         },
         options: {
+            layout: {
+                padding: {
+                    left: 0,
+                    right: 0,
+                    top: 10,
+                    bottom: 0
+                }
+            },
             legend: {
                 display: false
             },
@@ -141,6 +151,8 @@ function render(jsonData) {
                     var ctx = this.chart.ctx;
                     ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 'normal', Chart.defaults.global.defaultFontFamily);
                     ctx.fillStyle = this.chart.config.options.defaultFontColor;
+                    ctx.fillStyle = '#000000';
+                    console.log(ctx);
                     ctx.textAlign = 'center';
                     ctx.textBaseline = 'bottom';
                     this.data.datasets.forEach(function (dataset) {
@@ -148,12 +160,15 @@ function render(jsonData) {
                             var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model;
                             if (i === 0) {
                                 ctx.fillText(dataset.data[i].toFixed(0) + '°', model.x + 15, model.y - 5);
+                                ctx.fillText(labels[i], model.x + 20, 210);
                             }
                             else if (i === dataset.data.length - 1) {
                                 ctx.fillText(dataset.data[i].toFixed(0) + '°', model.x - 15, model.y - 5);
+                                ctx.fillText(labels[i], model.x - 20, 210);
                             }
                             else {
                                 ctx.fillText(dataset.data[i].toFixed(0) + '°', model.x, model.y - 5);
+                                ctx.fillText(labels[i], model.x, 210);
                             }
                         }
                     });
