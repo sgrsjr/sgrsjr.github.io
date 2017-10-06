@@ -1,3 +1,5 @@
+IMAGES = [];
+
 $(function () {
     // Add Listeners for submit.
     submit();
@@ -90,10 +92,10 @@ function render(jsonData) {
     var temps = [];
     for (var i = 0; i < jsonData.cnt; i++) {
         var temp = jsonData.temps[i][0];
+        temps.push(temp);
         var time = getTime(jsonData.start + (i * 10800)).HH;
         var label = (((time % 12) + (time / 12 > 1 ? " PM" : " AM")));
         labels.push(label);
-        temps.push(temp);
     }
 
     console.log(labels);
@@ -169,15 +171,24 @@ function render(jsonData) {
                             else {
                                 ctx.fillText(dataset.data[i].toFixed(0) + '°', model.x, model.y - 5);
                                 ctx.fillText(labels[i], model.x, 210);
+                                var img = document.createElement('img');
+                                img.src = 'img/weather-img/set-1/' + jsonData.temps[i][1] + '.svg';
+                                img.x = model.x;
+                                img.onload = function () {
+                                    console.log(this);
+                                    ctx.drawImage(img, model.x - 12, 180, 24, 24)
+                                };
+                                IMAGES.push(img);
                             }
                         }
                     });
-
                 }
             }
         }
     });
-    console.log(chart);
+}
+
+function imgLoaded(img) {
 }
 
 function renderHTML(data) {
