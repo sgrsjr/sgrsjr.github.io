@@ -9,10 +9,19 @@ $(function () {
 function submit() {
     var $locationInput = $("#location-input");
     var $searchBtn = $("#search-btn");
+    var $span = $("header").find("> span");
     $searchBtn.click(submitted);
+
     $locationInput.on('keypress', function (e) {
         if (e.keyCode === 13) submitted();
     });
+    $locationInput.on('focusin', function () {
+        $span.addClass("active");
+    });
+    $locationInput.on('blur', function () {
+        $span.removeClass("active");
+    });
+
     submitted();
 }
 

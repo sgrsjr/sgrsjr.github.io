@@ -41,14 +41,15 @@ header {
     transition: 300ms linear;
     position: relative; }
     header span input {
+      padding: 0;
       box-sizing: border-box;
       border: 0 solid #8D8D8D;
       text-align: center;
       height: 100%;
-      width: 82%;
+      width: 100%;
       outline: none;
-      background-color: #222222;
-      color: #8D8D8D; }
+      background-color: #8D8D8D;
+      border-radius: .3em; }
     header span input:focus {
       background-color: #8D8D8D;
       color: white; }
@@ -58,14 +59,19 @@ header {
     header span input:hover {
       color: white; }
     header span img#search-btn {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0em;
       box-sizing: border-box;
       border: 0 solid #8D8D8D;
-      display: block;
       float: right;
       padding: 3%;
       height: 100%; }
-  header span:hover {
-    border: 1px solid white; }
+  header span.active input {
+    padding-right: 2.3em; }
+  header span.active img#search-btn {
+    display: block; }
 
 .header-small {
   transform: scaleY(0.5); }
@@ -74,6 +80,8 @@ header {
     transform: scaleY(2);
     transition: 300ms linear; }
     .header-small span input#location-input {
+      background-color: #222222;
+      color: #8D8D8D;
       pointer-events: none; }
   .header-small span:hover {
     pointer-events: none; }

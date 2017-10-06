@@ -71,14 +71,15 @@ header {
         position: relative;
 
         input {
+            padding: 0;
             box-sizing: border-box;
             border: 0 solid $baseColor;
             text-align: center;
             height: 100%;
-            width: 82%;
+            width: 100%;
             outline: none;
-            background-color: $headerColor;
-            color: $baseColor;
+            background-color: $baseColor;
+            border-radius: .3em;
         }
         input:focus {
             background-color: $baseColor;
@@ -92,16 +93,24 @@ header {
             color: $borderColor;
         }
         img#search-btn {
+            display: none;
+            position: absolute;
+            top:0;
+            right: 0em;
             box-sizing: border-box;
             border: 0 solid $baseColor;
-            display: block;
             float: right;
             padding: 3%;
             height: 100%;
         }
     }
-    span:hover {
-        border: 1px solid $borderColor;
+    span.active {
+        input {
+            padding-right: 2.3em;
+        }
+        img#search-btn {
+            display: block;
+        }
     }
 }
 
@@ -113,6 +122,8 @@ header {
         transition: 300ms linear;
 
         input#location-input {
+            background-color: $headerColor;
+            color: $baseColor;
             pointer-events: none;
         }
     }
