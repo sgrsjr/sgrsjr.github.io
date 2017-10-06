@@ -10,12 +10,15 @@ function submit() {
     var $locationInput = $("#location-input");
     var $searchBtn = $("#search-btn");
     var $span = $("header").find("> span");
-    $searchBtn.click(submitted);
 
+    $searchBtn.click(submitted);
     $locationInput.on('keypress', function (e) {
         if (e.keyCode === 13) submitted();
     });
+
+
     $locationInput.on('focusin', function () {
+        $("html, body").animate({scrollTop: 0}, 300);
         $span.addClass("active");
     });
     $locationInput.on('blur', function () {
@@ -220,6 +223,7 @@ function animate() {
 function animateHeader($header, $footer, $mainInfo, originalHeaderHeight) {
     var amountScrolled = $(window).scrollTop();
     var footerOffset = $footer.offset().top - amountScrolled;
+    if (amountScrolled > 0) $(":focus").blur();
     if (amountScrolled > 3 * originalHeaderHeight) {
         $header.addClass("header-small");
         $mainInfo.addClass("main-small");

@@ -124,11 +124,7 @@ header {
         input#location-input {
             background-color: $headerColor;
             color: $baseColor;
-            pointer-events: none;
         }
-    }
-    span:hover {
-        pointer-events: none;
     }
 }
 

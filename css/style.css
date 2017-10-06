@@ -81,10 +81,7 @@ header {
     transition: 300ms linear; }
     .header-small span input#location-input {
       background-color: #222222;
-      color: #8D8D8D;
-      pointer-events: none; }
-  .header-small span:hover {
-    pointer-events: none; }
+      color: #8D8D8D; }
 
 .banner {
   font-size: 1rem;
