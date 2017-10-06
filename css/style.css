@@ -4,7 +4,7 @@
 
 html {
   height: 100%;
-  background: blue;
+  background: transparent;
   font-size: 22px; }
 
 body {
@@ -79,14 +79,16 @@ header {
 .header-small {
   transform: scaleY(0.5); }
   .header-small span {
-    border: 0;
     transform: scaleY(2);
     transition: 300ms linear; }
     .header-small span input#location-input {
       border-radius: 0; }
 
 .header-minimal {
-  box-shadow: 0 1em 3em 0.5em rgba(0, 0, 0, 0.4); }
+  box-shadow: 0 1em 3em 0.5em rgba(0, 0, 0, 0.4);
+  transform: scaleY(0.8); }
+  .header-minimal span {
+    transform: scale(1.25, 1.5625); }
   .header-minimal input#location-input {
     box-shadow: none;
     background-color: #222222;
@@ -157,8 +159,7 @@ footer {
   font-size: 1rem;
   position: relative;
   top: 25rem;
-  background: #8D8D8D;
-  box-shadow: 0 -0.1em 0.5em 0.05em rgba(0, 0, 0, 0.4); }
+  background: #8D8D8D; }
   footer section {
     font-size: .8em;
     border-top: 0.05em solid #8D8D8D;
@@ -196,6 +197,9 @@ footer {
       background-color: #8D8D8D; }
       footer section.has-card > div span.card img {
         height: 2em; }
+
+footer.scrolled {
+  box-shadow: 0 -0.1em 1em 0.2em rgba(0, 0, 0, 0.4); }
 
 .has-chart {
   box-sizing: border-box;

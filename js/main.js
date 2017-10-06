@@ -223,19 +223,26 @@ function animate() {
 function animateHeader($header, $footer, $mainInfo, originalHeaderHeight) {
     var amountScrolled = $(window).scrollTop();
     var footerOffset = $footer.offset().top - amountScrolled;
-    if (amountScrolled > 0) $(":focus").blur();
-    if (amountScrolled > 3 * originalHeaderHeight) {
-        $header.addClass("header-small");
-        $mainInfo.addClass("main-small");
-        if (footerOffset < 0.5 * originalHeaderHeight) {
-            $header.addClass("header-minimal");
-        }
+    if (amountScrolled === 0) {
+        $footer.removeClass("scrolled");
     }
     else {
-        $header.removeClass("header-small");
-        $mainInfo.removeClass("main-small");
-        if ($header.has("header-minimal")) {
-            $header.removeClass("header-minimal");
+        $(":focus").blur();
+        $footer.addClass("scrolled");
+
+        if (amountScrolled > 3 * originalHeaderHeight) {
+            $header.addClass("header-small");
+            $mainInfo.addClass("main-small");
+            if (footerOffset < 0.5 * originalHeaderHeight) {
+                $header.addClass("header-minimal");
+            }
+        }
+        else {
+            $header.removeClass("header-small");
+            $mainInfo.removeClass("main-small");
+            if ($header.has("header-minimal")) {
+                $header.removeClass("header-minimal");
+            }
         }
     }
     requestAnimationFrame(function () {

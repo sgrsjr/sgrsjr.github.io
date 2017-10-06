@@ -31,7 +31,7 @@ $fontFamily: Arial;
 
 html {
     height: 100%;
-    background: blue;
+    background: transparent;
     font-size: 22px;
 }
 
@@ -121,7 +121,6 @@ header {
 .header-small {
     transform: scaleY(0.5);
     span {
-        border: 0;
         transform: scaleY(2);
         transition: 300ms linear;
 
@@ -133,10 +132,15 @@ header {
 
 .header-minimal {
     box-shadow: 0 1em 3em .5em $shadowColor;
+    transform: scaleY(0.8);
+    span {
+        transform: scale(1.25, 1.5625);
+    }
     input#location-input {
         box-shadow: none;
         background-color: $headerColor;
         color: $baseColor;
+        //transition: 50s;
     }
 }
 
@@ -229,7 +233,6 @@ footer {
     position: relative;
     top: 25rem;
     background: $baseColor;
-    box-shadow: 0 -.1em .5em .05em $shadowColor;
 
     section {
         font-size: .8em;
@@ -288,6 +291,11 @@ footer {
             }
         }
     }
+}
+
+footer.scrolled {
+    //box-shadow: 0 1em 3em .5em $shadowColor;
+    box-shadow: 0 -.1em 1em .2em $shadowColor;
 }
 
 .has-chart {
