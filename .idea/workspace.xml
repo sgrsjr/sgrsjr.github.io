@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="88617400-a2f2-46ed-9b03-9ef8bf62bd1a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css.map" afterPath="$PROJECT_DIR$/css/style.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.scss" afterPath="$PROJECT_DIR$/css/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,21 +16,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+            <state relative-caret-position="153">
+              <caret line="41" column="52" lean-forward="false" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+            <state relative-caret-position="-4237">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,9 +96,9 @@
         <option value="$PROJECT_DIR$/old/index.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/css/style2.scss" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/css/style.scss" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -664,7 +663,7 @@
       <workItem from="1506834751635" duration="23039000" />
       <workItem from="1506936502337" duration="23151000" />
       <workItem from="1506966720301" duration="34196000" />
-      <workItem from="1507230592342" duration="3641000" />
+      <workItem from="1507230592342" duration="3949000" />
     </task>
     <task id="LOCAL-00001" summary="now using jQuery CDN(compressed)">
       <created>1506708319562</created>
@@ -862,11 +861,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507280147222</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Made Chart update when new data is AJAX-ed. 2">
+      <created>1507280230299</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1507280230299</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240459000" />
+    <option name="totallyTimeSpent" value="240767000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="997" height="735" extended-state="0" />
@@ -981,7 +987,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Now using 'requestAnimationFrame()' instead of listening for scroll&#10;Animating the header using transform property instead of changing the 'height' property." />
     <MESSAGE value="Added search bar to header&#10;-Added animation to it &lt;3" />
     <MESSAGE value="Added main items to Banner" />
     <MESSAGE value="Added main items to Banner&#10;AJAX the data on submit" />
@@ -1006,7 +1011,8 @@
     <MESSAGE value="Moved the 'temp-chart' to the banner" />
     <MESSAGE value="Fixed 'temp-chart' positioning." />
     <MESSAGE value="Made Chart update when new data is AJAX-ed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made Chart update when new data is AJAX-ed." />
+    <MESSAGE value="Made Chart update when new data is AJAX-ed. 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made Chart update when new data is AJAX-ed. 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1225,14 +1231,6 @@
     <entry file="file://$PROJECT_DIR$/node_modules/chart.js/dist/docs/index.html" />
     <entry file="file://$PROJECT_DIR$/node_modules/chart.js/dist/docs/configuration/animations.html" />
     <entry file="file://$PROJECT_DIR$/package-lock.json" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -1243,8 +1241,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        <state relative-caret-position="-4237">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="41" column="52" lean-forward="false" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
           <folding />
         </state>
       </provider>
