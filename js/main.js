@@ -68,6 +68,7 @@ function submitted() {
 }
 
 function render(jsonData) {
+    console.log("hi");
     var $tempSection = $("#temp-section").find("> div");
 
     for (var i = 0; i < jsonData.cnt; i++) {
@@ -75,7 +76,12 @@ function render(jsonData) {
         var cardImg = '<img src="img/weather-img/set-1/' + jsonData.temps[i][1] + '.svg"/>';
         var time = getTime(jsonData.start + (i * 10800)).HH;
         var cardTime = '<h6>' + (((time % 12) + (time / 12 > 1 ? " PM" : " AM"))) + '</h6>';
-        $tempSection.append('<span class="card">' + ( cardData + cardImg + cardTime) + '</span>');
+        if (i === 0) {
+            $tempSection.html('<span class="card">' + ( cardData + cardImg + cardTime) + '</span>');
+        }
+        else {
+            $tempSection.append('<span class="card">' + ( cardData + cardImg + cardTime) + '</span>');
+        }
     }
 
     // Chart
@@ -92,8 +98,8 @@ function render(jsonData) {
 
     var $canvas = $("<canvas/>");
     var $tempChart = $("#temp-chart");
-    $tempChart.append('<div><div></div></div>');
-    $tempChart.find("> div > div").append($canvas);
+    $tempChart.html('<div><div></div></div>');
+    $tempChart.find("> div > div").html($canvas);
 
     var chart = new Chart($canvas, {
         type: 'line',
@@ -140,7 +146,15 @@ function render(jsonData) {
                     this.data.datasets.forEach(function (dataset) {
                         for (var i = 0; i < dataset.data.length; i++) {
                             var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model;
-                            ctx.fillText(dataset.data[i].toFixed(0) + '°', model.x, model.y - 5);
+                            if (i === 0) {
+                                ctx.fillText(dataset.data[i].toFixed(0) + '°', model.x + 15, model.y - 5);
+                            }
+                            else if (i === dataset.data.length - 1) {
+                                ctx.fillText(dataset.data[i].toFixed(0) + '°', model.x - 15, model.y - 5);
+                            }
+                            else {
+                                ctx.fillText(dataset.data[i].toFixed(0) + '°', model.x, model.y - 5);
+                            }
                         }
                     });
 
