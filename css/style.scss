@@ -233,13 +233,21 @@ header {
 footer {
     font-size: 1rem;
     position: relative;
-    background: $baseColor;
+    background: $headerColor;
 
     section {
         font-size: .8em;
         //border-top: .05em solid $baseColor;
         background-color: $headerColor;
         padding: 2em 2em 2em 2em;
+        margin: 0 auto;
+        @include bp-medium {
+            width: 70%;
+        }
+        @include bp-large {
+            width: auto;
+            float: left;
+        }
 
         h3 {
             font-size: 1em;
@@ -292,6 +300,12 @@ footer {
             }
         }
     }
+}
+
+footer:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 footer.scrolled {

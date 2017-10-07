@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88617400-a2f2-46ed-9b03-9ef8bf62bd1a" name="Default" comment="">
+    <list default="true" id="88617400-a2f2-46ed-9b03-9ef8bf62bd1a" name="Default" comment="Made the page Responsive.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css.map" afterPath="$PROJECT_DIR$/css/style.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.scss" afterPath="$PROJECT_DIR$/css/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,31 +23,30 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="35" column="21" lean-forward="true" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+            <state relative-caret-position="816">
+              <caret line="48" column="30" lean-forward="false" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+            <state relative-caret-position="-990">
+              <caret line="188" column="17" lean-forward="true" selection-start-line="188" selection-start-column="17" selection-end-line="188" selection-end-column="17" />
               <folding>
                 <element signature="n#!!block;n#submit#0" expanded="false" />
-                <element signature="n#!!block;n#submitted#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3740">
-              <caret line="315" column="26" lean-forward="false" selection-start-line="315" selection-start-column="26" selection-end-line="315" selection-end-column="26" />
+            <state relative-caret-position="-1033">
+              <caret line="247" column="24" lean-forward="false" selection-start-line="247" selection-start-column="24" selection-end-line="247" selection-end-column="24" />
               <folding>
                 <element signature="e#678#726#0" expanded="false" />
                 <element signature="e#735#2504#0" expanded="false" />
@@ -109,8 +109,8 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/css/style2.scss" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/css/style.scss" />
+        <option value="$PROJECT_DIR$/js/main.js" />
       </list>
     </option>
   </component>
@@ -1044,11 +1044,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507362059054</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Made the page Responsive.">
+      <created>1507373142332</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1507373142332</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="262684000" />
+    <option name="totallyTimeSpent" value="263389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -1187,7 +1194,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Set Layout in details section(footer)." />
     <MESSAGE value="Migrated to new Layout&#10;-old files in 'old' folder&#10;-renamed 'index2.html' to 'index.html'.&#10;-renamed 'script.js' to 'main.js'." />
     <MESSAGE value="Migrated to new Layout&#10;-old files in 'old' folder&#10;-renamed 'index2.html' to 'index.html'.&#10;-renamed 'script.js' to 'main.js'.&#10;-Removed many warnings." />
     <MESSAGE value="Renamed 'sheet.css' to 'style.css'" />
@@ -1212,7 +1218,8 @@
     <MESSAGE value="Blur input box on scroll." />
     <MESSAGE value="Added shadows &lt;3" />
     <MESSAGE value="Changed label color" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed label color" />
+    <MESSAGE value="Made the page Responsive." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made the page Responsive." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1433,32 +1440,31 @@
     <entry file="file://$PROJECT_DIR$/package-lock.json" />
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="35" column="21" lean-forward="true" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+        <state relative-caret-position="816">
+          <caret line="48" column="30" lean-forward="false" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding>
-            <element signature="n#!!block;n#submit#0" expanded="false" />
-            <element signature="n#!!block;n#submitted#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3740">
-          <caret line="315" column="26" lean-forward="false" selection-start-line="315" selection-start-column="26" selection-end-line="315" selection-end-column="26" />
+        <state relative-caret-position="-1033">
+          <caret line="247" column="24" lean-forward="false" selection-start-line="247" selection-start-column="24" selection-end-line="247" selection-end-column="24" />
           <folding>
             <element signature="e#678#726#0" expanded="false" />
             <element signature="e#735#2504#0" expanded="false" />
             <element signature="e#2520#2704#0" expanded="false" />
             <element signature="e#2722#3008#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-990">
+          <caret line="188" column="17" lean-forward="true" selection-start-line="188" selection-start-column="17" selection-end-line="188" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!block;n#submit#0" expanded="false" />
           </folding>
         </state>
       </provider>

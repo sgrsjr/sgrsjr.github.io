@@ -47,11 +47,6 @@ function submitted() {
         type: 'GET',
         url: 'https://api.openweathermap.org/data/2.5/forecast?units=metric&' + appid + city,
         success: function (result) {
-            console.log(result);
-
-            // for (i = 1; i < result.list.length; i++) {
-            //     console.log(result.list[i].dt_txt);
-            // }
 
             var myJSON = {
                 cnt: 0,
@@ -191,9 +186,6 @@ function render(jsonData) {
                             }
                         }
                     });
-                    var $divToScroll = $("#temp-chart").find("> div");
-                    // var width = $divToScroll.find("> div")[0].width();
-                    // $divToScroll.animate({scrollLeft: 500}, 300);
                 }
             }
         }

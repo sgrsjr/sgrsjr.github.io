@@ -160,11 +160,19 @@ header {
 footer {
   font-size: 1rem;
   position: relative;
-  background: #8D8D8D; }
+  background: #222222; }
   footer section {
     font-size: .8em;
     background-color: #222222;
-    padding: 2em 2em 2em 2em; }
+    padding: 2em 2em 2em 2em;
+    margin: 0 auto; }
+    @media only screen and (min-width: 500px) {
+      footer section {
+        width: 70%; } }
+    @media only screen and (min-width: 800px) {
+      footer section {
+        width: auto;
+        float: left; } }
     footer section h3 {
       font-size: 1em;
       color: white;
@@ -197,6 +205,11 @@ footer {
       background-color: #8D8D8D; }
       footer section.has-card > div span.card img {
         height: 2em; }
+
+footer:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 footer.scrolled {
   box-shadow: 0 -0.1em 1em 0.2em rgba(0, 0, 0, 0.4); }
