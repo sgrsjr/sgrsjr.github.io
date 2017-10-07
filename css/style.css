@@ -3,14 +3,14 @@
   transition: 300ms; }
 
 html {
-  height: 100%;
   background: transparent;
   font-size: 22px; }
 
 body {
   background: #8D8D8D;
   margin: 0 auto;
-  height: 100vh; }
+  width: 100vw;
+  overflow-x: hidden; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial;
@@ -97,7 +97,6 @@ header {
 .banner {
   font-size: 1rem;
   box-sizing: border-box;
-  position: fixed;
   top: 0;
   width: 100%;
   padding-top: 4.68em;
@@ -105,9 +104,12 @@ header {
   padding-left: 0;
   text-align: center; }
   .banner div#main-info {
-    height: 100%;
+    margin: 0 auto;
     bottom: 0;
     transition: 300ms linear; }
+    @media only screen and (min-width: 500px) {
+      .banner div#main-info {
+        width: 80%; } }
     .banner div#main-info > h4 {
       text-align: left;
       padding: 1em 1em 0.5em; }
@@ -158,11 +160,9 @@ header {
 footer {
   font-size: 1rem;
   position: relative;
-  top: 25rem;
   background: #8D8D8D; }
   footer section {
     font-size: .8em;
-    border-top: 0.05em solid #8D8D8D;
     background-color: #222222;
     padding: 2em 2em 2em 2em; }
     footer section h3 {
@@ -203,8 +203,7 @@ footer.scrolled {
 
 .has-chart {
   box-sizing: border-box;
-  position: fixed;
-  top: 15rem;
+  position: relative;
   height: 11rem;
   width: 100%; }
   .has-chart > div {
@@ -215,5 +214,8 @@ footer.scrolled {
     .has-chart > div > div {
       width: 60em;
       height: 100%; }
+      @media only screen and (min-width: 800px) {
+        .has-chart > div > div {
+          width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

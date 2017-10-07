@@ -114,6 +114,7 @@ function render(jsonData) {
     var $tempChart = $("#temp-chart");
     $tempChart.html('<div><div></div></div>');
     $tempChart.find("> div > div").html($canvas);
+    $tempChart.scrollLeft($tempChart.width);
 
     var chart = new Chart($canvas, {
         type: 'line',
@@ -190,7 +191,9 @@ function render(jsonData) {
                             }
                         }
                     });
-
+                    var $divToScroll = $("#temp-chart").find("> div");
+                    // var width = $divToScroll.find("> div")[0].width();
+                    // $divToScroll.animate({scrollLeft: 500}, 300);
                 }
             }
         }

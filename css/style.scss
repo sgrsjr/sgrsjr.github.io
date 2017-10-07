@@ -13,13 +13,13 @@ $fontFamily: Arial;
 }
 
 @mixin bp-medium {
-    @media only screen and (max-width: 500px) {
+    @media only screen and (min-width: 500px) {
         @content
     }
 }
 
 @mixin bp-large {
-    @media only screen and (min-width: 500px) {
+    @media only screen and (min-width: 800px) {
         @content
     }
 }
@@ -30,7 +30,7 @@ $fontFamily: Arial;
 }
 
 html {
-    height: 100%;
+    //height: 100%;
     background: transparent;
     font-size: 22px;
 }
@@ -38,7 +38,8 @@ html {
 body {
     background: $baseColor;
     margin: 0 auto;
-    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -147,7 +148,6 @@ header {
 .banner {
     font-size: 1rem;
     box-sizing: border-box;
-    position: fixed;
     top: 0;
     width: 100%;
     padding-top: 4.68em;
@@ -156,10 +156,12 @@ header {
     text-align: center;
 
     div#main-info {
-        height: 100%;
+        margin: 0 auto;
         bottom: 0;
         transition: 300ms linear;
-        //text-shadow: .05em .05em 0.04em transparentize($shadowColor,0.2);
+        @include bp-medium {
+            width: 80%;
+        }
 
         > h4 {
             text-align: left;
@@ -231,12 +233,11 @@ header {
 footer {
     font-size: 1rem;
     position: relative;
-    top: 25rem;
     background: $baseColor;
 
     section {
         font-size: .8em;
-        border-top: .05em solid $baseColor;
+        //border-top: .05em solid $baseColor;
         background-color: $headerColor;
         padding: 2em 2em 2em 2em;
 
@@ -300,8 +301,7 @@ footer.scrolled {
 
 .has-chart {
     box-sizing: border-box;
-    position: fixed;
-    top: 15rem;
+    position: relative;
     height: 11rem;
     width: 100%;
     > div {
@@ -312,6 +312,9 @@ footer.scrolled {
         > div {
             width: 60em;
             height: 100%;
+            @include bp-large {
+                width: 100%;
+            }
         }
 
     }
