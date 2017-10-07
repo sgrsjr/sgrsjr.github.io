@@ -161,6 +161,9 @@ footer {
   font-size: 1rem;
   position: relative;
   background: #222222; }
+  @media only screen and (min-width: 800px) {
+    footer {
+      padding: 2em 3em 2em 2em; } }
   footer section {
     font-size: .8em;
     background-color: #222222;

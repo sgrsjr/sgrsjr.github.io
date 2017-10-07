@@ -154,7 +154,7 @@ function render(jsonData) {
                 }]
             },
             animation: {
-                onComplete: function () {
+                onProgress: function () {
                     // render the value of the chart above the bar
                     var ctx = this.chart.ctx;
                     ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 'normal', Chart.defaults.global.defaultFontFamily);

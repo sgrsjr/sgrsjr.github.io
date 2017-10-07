@@ -234,6 +234,9 @@ footer {
     font-size: 1rem;
     position: relative;
     background: $headerColor;
+    @include bp-large {
+        padding: 2em 3em 2em 2em;
+    }
 
     section {
         font-size: .8em;
