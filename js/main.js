@@ -11,12 +11,13 @@ function submit() {
     var $searchBtn = $("#search-btn");
     var $span = $("header").find("> span");
 
-    $searchBtn.click(submitted);
+    // Add Listeners for Submit
+    $searchBtn.on('click', submitted);
     $locationInput.on('keypress', function (e) {
         if (e.keyCode === 13) submitted();
     });
 
-
+    // Toggle 'active' class on $locationInput
     $locationInput.on('focusin', function () {
         $("html, body").animate({scrollTop: 0}, 300);
         $span.addClass("active");
@@ -25,7 +26,10 @@ function submit() {
         $span.removeClass("active");
     });
 
-    submitted();
+    $.getJSON('https://ipinfo.io', function (locationData) {
+        $locationInput.attr("value", locationData.city);
+        submitted();
+    });
 }
 
 function submitted() {
@@ -65,7 +69,6 @@ function submitted() {
                 myJSON.temps.push(temp);
                 myJSON.cnt++;
             }
-            console.log(myJSON);
             render(myJSON);
         },
         error: function () {
@@ -102,8 +105,6 @@ function render(jsonData) {
         labels.push(label);
         temps.push(temp);
     }
-
-    console.log(labels);
 
     var $canvas = $("<canvas/>");
     var $tempChart = $("#temp-chart");
@@ -160,7 +161,6 @@ function render(jsonData) {
                     ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 'normal', Chart.defaults.global.defaultFontFamily);
                     var fontColor = '#000000';
                     var labelColor = '#3b3b3b'
-                    console.log(ctx);
                     ctx.textAlign = 'center';
                     ctx.textBaseline = 'bottom';
                     this.data.datasets.forEach(function (dataset) {
@@ -190,7 +190,6 @@ function render(jsonData) {
             }
         }
     });
-    console.log(chart);
 }
 
 function renderHTML(data) {
