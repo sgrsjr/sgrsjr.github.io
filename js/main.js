@@ -129,7 +129,7 @@ function render(jsonData) {
                 padding: {
                     left: 0,
                     right: 0,
-                    top: 10,
+                    top: 15,
                     bottom: 0
                 }
             },
@@ -162,8 +162,8 @@ function render(jsonData) {
                     // render the value of the chart above the bar
                     var ctx = this.chart.ctx;
                     ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 'normal', Chart.defaults.global.defaultFontFamily);
-                    ctx.fillStyle = this.chart.config.options.defaultFontColor;
-                    ctx.fillStyle = '#000000';
+                    var fontColor = '#000000';
+                    var labelColor = '#3b3b3b'
                     console.log(ctx);
                     ctx.textAlign = 'center';
                     ctx.textBaseline = 'bottom';
@@ -171,15 +171,21 @@ function render(jsonData) {
                         for (var i = 0; i < dataset.data.length; i++) {
                             var model = dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model;
                             if (i === 0) {
+                                ctx.fillStyle = fontColor;
                                 ctx.fillText(dataset.data[i].toFixed(0) + '°', model.x + 15, model.y - 5);
+                                ctx.fillStyle = labelColor;
                                 ctx.fillText(labels[i], model.x + 20, 210);
                             }
                             else if (i === dataset.data.length - 1) {
+                                ctx.fillStyle = fontColor;
                                 ctx.fillText(dataset.data[i].toFixed(0) + '°', model.x - 15, model.y - 5);
+                                ctx.fillStyle = labelColor;
                                 ctx.fillText(labels[i], model.x - 20, 210);
                             }
                             else {
+                                ctx.fillStyle = fontColor;
                                 ctx.fillText(dataset.data[i].toFixed(0) + '°', model.x, model.y - 5);
+                                ctx.fillStyle = labelColor;
                                 ctx.fillText(labels[i], model.x, 210);
                             }
                         }
