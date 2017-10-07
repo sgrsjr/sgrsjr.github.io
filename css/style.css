@@ -196,18 +196,30 @@ footer {
   footer section.filler {
     min-height: 4em; }
   footer section.has-card > div {
+    width: 100%;
     height: 100%;
+    margin-top: 1em;
     padding-left: 0;
     padding-right: 0;
-    width: 100%;
     overflow: auto;
-    white-space: nowrap; }
+    white-space: nowrap;
+    box-shadow: 0 0.3em 0.5em -0.1em rgba(0, 0, 0, 0.4), 0 -0.3em 0.5em -0.1em rgba(0, 0, 0, 0.4); }
     footer section.has-card > div span.card {
       display: inline-block;
-      border: 1px solid;
-      background-color: #8D8D8D; }
+      border: 0;
+      background-color: #8D8D8D;
+      text-align: center;
+      padding: 1.2em .5em .5em;
+      height: 8em;
+      position: relative; }
+      footer section.has-card > div span.card p {
+        margin: 0;
+        font-size: .8em; }
       footer section.has-card > div span.card img {
+        padding: .8em;
         height: 2em; }
+      footer section.has-card > div span.card h6 {
+        margin-top: 1.5em; }
 
 footer:after {
   content: "";

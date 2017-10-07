@@ -55,7 +55,8 @@ function submitted() {
             var myJSON = {
                 cnt: 0,
                 start: 0,
-                temps: []
+                temps: [],
+                winds: []
             };
 
             var n = 15;
@@ -63,10 +64,18 @@ function submitted() {
                 if (i === 0) {
                     myJSON.start = result.list[0].dt;
                 }
+                // Temp
                 var temp = {};
                 temp[0] = result.list[i].main.temp;
                 temp[1] = result.list[i].weather[0].icon;
                 myJSON.temps.push(temp);
+
+                // Wind
+                var wind = {};
+                wind[0] = result.list[i].wind.speed;
+                wind[1] = result.list[i].wind.deg;
+                myJSON.winds.push(wind);
+
                 myJSON.cnt++;
             }
             render(myJSON);
@@ -78,21 +87,22 @@ function submitted() {
 }
 
 function render(jsonData) {
-    // console.log("hi");
-    // var $tempSection = $("#temp-section").find("> div");
-    //
-    // for (var i = 0; i < jsonData.cnt; i++) {
-    //     var cardData = '<p>' + jsonData.temps[i][0] + '°</p>';
-    //     var cardImg = '<img src="img/weather-img/set-1/' + jsonData.temps[i][1] + '.svg"/>';
-    //     var time = getTime(jsonData.start + (i * 10800)).HH;
-    //     var cardTime = '<h6>' + (((time % 12) + (time / 12 > 1 ? " PM" : " AM"))) + '</h6>';
-    //     if (i === 0) {
-    //         $tempSection.html('<span class="card">' + ( cardData + cardImg + cardTime) + '</span>');
-    //     }
-    //     else {
-    //         $tempSection.append('<span class="card">' + ( cardData + cardImg + cardTime) + '</span>');
-    //     }
-    // }
+    var $windSection = $("#wind-section").find("> div");
+
+    for (var i = 0; i < jsonData.cnt; i++) {
+        var windSpeed = '<p>' + ((jsonData.winds[i][0] * 18) / 5).toFixed(2) + ' km/h' + '</p>';
+        var windDeg = '<p>' + jsonData.winds[i][1].toFixed(0) + '°' + '</p>';
+        var imgStyle = 'style="transform:rotate(' + jsonData.winds[i][1] + 'deg)"';
+        var img = '<img src="img/weather-img/wind.svg" ' + imgStyle + ' />';
+        var time = getTime(jsonData.start + (i * 10800)).HH;
+        var cardTime = '<h6>' + (((time % 12) + (time / 12 > 1 ? " PM" : " AM"))) + '</h6>';
+        if (i === 0) {
+            $windSection.html('<span class="card">' + (windDeg + img + windSpeed + cardTime) + '</span>');
+        }
+        else {
+            $windSection.append('<span class="card">' + (windDeg + img + windSpeed + cardTime) + '</span>');
+        }
+    }
 
     // Chart
 
@@ -267,7 +277,7 @@ function getTime(UNIX_timestamp) {
         "HH": a.getHours(),
         "MM": a.getMinutes(),
         "SS": a.getSeconds(),
-        "format1": a.getDay() + ' ' + monthsLong[a.getMonth()] + ', ' + daysLong[a.getDay()],
+        "format1": a.getDate() + ' ' + monthsLong[a.getMonth()] + ', ' + daysLong[a.getDay()],
         "format_24": a.getHours() + ':' + a.getMinutes(),
         "format_12": a.getHours() % 12 + ':' + a.getMinutes()
     };

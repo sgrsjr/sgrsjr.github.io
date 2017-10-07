@@ -71,6 +71,7 @@ header {
         z-index: 4;
         border: 0 solid $headerColor;
         transition: 300ms linear;
+
         position: relative;
 
         input {
@@ -279,29 +280,40 @@ footer {
         min-height: 4em;
     }
     section.has-card {
-
         > div {
+            width: 100%;
             height: 100%;
+            margin-top: 1em;
             padding-left: 0;
             padding-right: 0;
-            width: 100%;
             overflow: auto;
             white-space: nowrap;
+            box-shadow:
+                0 .3em .5em -0.1em $shadowColor,
+                0 -.3em .5em -0.1em $shadowColor;
             span.card {
                 display: inline-block;
-                border: 1px solid;
+                border: 0;
                 background-color: $baseColor;
+                text-align: center;
+                padding: 1.2em .5em .5em;
+                height: 8em;
+                position: relative;
                 p {
+                    margin: 0;
+                    font-size: .8em;
 
                 }
                 img {
+                    padding: .8em;
                     height: 2em;
                 }
                 h6 {
-
+                    margin-top: 1.5em;
                 }
             }
         }
+
     }
 }
 
@@ -312,7 +324,6 @@ footer:after {
 }
 
 footer.scrolled {
-    //box-shadow: 0 1em 3em .5em $shadowColor;
     box-shadow: 0 -.1em 1em .2em $shadowColor;
 }
 
