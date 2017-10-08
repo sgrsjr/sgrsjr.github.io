@@ -360,6 +360,12 @@ th {
 html {
   background: transparent;
   font-size: 22px; }
+  @media only screen and (max-width: 360px) {
+    html {
+      font-size: 19px; } }
+  @media only screen and (max-width: 300px) {
+    html {
+      font-size: 16px; } }
 
 body {
   background: #8D8D8D;
