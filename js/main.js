@@ -216,9 +216,25 @@ function renderHTML(data) {
     document.getElementById("wind-deg").innerHTML = '<p>Wind Direction:</p>' + data.wind.deg + '°';
     document.getElementById("clouds").innerHTML = '<p>Clouds:</p>' + data.clouds.all + '%';
     document.getElementById("date").innerHTML = getTime(data.dt).format1;
-    document.getElementById("sunrise").innerHTML = '<p>Sunrise:</p>' + getTime(data.sys.sunrise).format_12 + ' AM';
-    document.getElementById("sunset").innerHTML = '<p>Sunset:</p>' + getTime(data.sys.sunset).format_12 + ' PM';
+    var sunriseTime = getTime(data.sys.sunrise).format_12;
+    document.getElementById("sunrise").innerHTML = '<p>Sunrise:</p>' + sunriseTime + ' AM';
+    var sunsetTime = getTime(data.sys.sunset).format_12;
+    document.getElementById("sunset").innerHTML = '<p>Sunset:</p>' + sunsetTime + ' PM';
 
+
+    $("#sun-section").append('<div id="svg-container"><object id="sun-object" type="image/svg+xml" data="img/sunPath.svg"></object></div>');
+
+    var sunObject = document.getElementById('sun-object');
+    sunObject.addEventListener('load', function () {
+        $("#sunrise-svg").html(sunriseTime + ' AM');
+        $("#sunset-svg").html(sunsetTime + ' PM');
+
+        var bar = new ProgressBar.Path(sunObject.contentDocument.querySelector('#sun-path'), {
+            duration: 3000
+        });
+        bar.set(0);
+        bar.animate((data.dt % 86400000) / 86400000);
+    });
 }
 
 function animate() {
