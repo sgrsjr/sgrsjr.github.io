@@ -201,7 +201,7 @@ function renderHTML(data) {
     document.getElementById("location").innerHTML = '<p>Location:</p>' + data.name + ', ' + data.sys.country;
     document.getElementById("weather-desc").innerHTML = data.weather[0].main;
     $("#weather-img").attr("data", 'img/weather-img/set-1/' + data.weather[0].icon + '.svg');
-    document.getElementById("temp").innerHTML = data.main.temp + '<p>°</p><p>c</p>';
+    document.getElementById("temp").innerHTML = data.main.temp.toFixed(0) + '<p>°</p><p>c</p>';
     document.getElementById("pressure").innerHTML = '<p>Pressure:</p>' + data.main.pressure + ' mBar';
     document.getElementById("humidity").innerHTML = '<p>Humidity:</p>' + data.main.humidity + '%';
     document.getElementById("temp-min").innerHTML = '<p>Night</p><p>' + data.main.temp_min + '°</p><p>↓</p>';
