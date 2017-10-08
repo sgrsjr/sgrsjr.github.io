@@ -128,6 +128,7 @@ header {
             padding-right: 2.3em;
         }
         img#search-btn {
+            filter: drop-shadow(.1em .1em .5em $shadowColor);
             display: block;
         }
     }
@@ -301,9 +302,8 @@ footer {
             padding-right: 0;
             overflow: auto;
             white-space: nowrap;
-            box-shadow:
-                0 .3em .5em -0.1em $shadowColor,
-                0 -.3em .5em -0.1em $shadowColor;
+            box-shadow: 0 .3em .5em -0.1em $shadowColor,
+            0 -.3em .5em -0.1em $shadowColor;
             span.card {
                 display: inline-block;
                 border: 0;
@@ -329,12 +329,14 @@ footer {
 
     }
     section#sun-section {
-        object {
-            width: 100%;
-            margin-top: 1em;
-            box-shadow:
-                0 .3em .5em -0.1em $shadowColor,
+        > div {
+            object {
+
+                width: 100%;
+                margin-top: 1em;
+                box-shadow: 0 .3em .5em -0.1em $shadowColor,
                 0 -.3em .5em -0.1em $shadowColor;
+            }
         }
     }
 }

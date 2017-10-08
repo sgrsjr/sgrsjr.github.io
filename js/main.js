@@ -217,7 +217,7 @@ function renderHTML(data) {
     document.getElementById("sunset").innerHTML = '<p>Sunset:</p>' + sunsetTime + ' PM';
 
 
-    $("#sun-section").append('<div id="svg-container"><object id="sun-object" type="image/svg+xml" data="img/sunPath.svg"></object></div>');
+    $("#sun-section >div").html('<div id="svg-container"><object id="sun-object" type="image/svg+xml" data="img/sunPath.svg"></object></div>');
 
     var sunObject = document.getElementById('sun-object');
     sunObject.addEventListener('load', function () {

@@ -435,6 +435,7 @@ header {
     box-shadow: 0 0 0.6em 0.1em rgba(0, 0, 0, 0.4);
     padding-right: 2.3em; }
   header span.active img#search-btn {
+    filter: drop-shadow(0.1em 0.1em 0.5em rgba(0, 0, 0, 0.4));
     display: block; }
 
 .header-small {
@@ -581,7 +582,7 @@ footer {
         height: 2em; }
       footer section.has-card > div span.card h6 {
         margin-top: 1.5em; }
-  footer section#sun-section object {
+  footer section#sun-section > div object {
     width: 100%;
     margin-top: 1em;
     box-shadow: 0 0.3em 0.5em -0.1em rgba(0, 0, 0, 0.4), 0 -0.3em 0.5em -0.1em rgba(0, 0, 0, 0.4); }
