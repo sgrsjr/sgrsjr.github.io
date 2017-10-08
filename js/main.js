@@ -89,6 +89,9 @@ function submitted() {
 function render(jsonData) {
     var $windSection = $("#wind-section").find("> div");
 
+    var labels = [];
+    var temps = [];
+
     for (var i = 0; i < jsonData.cnt; i++) {
         var windSpeed = '<p>' + ((jsonData.winds[i][0] * 18) / 5).toFixed(2) + ' km/h' + '</p>';
         var windDeg = '<p>' + jsonData.winds[i][1].toFixed(0) + '°' + '</p>';
@@ -102,15 +105,7 @@ function render(jsonData) {
         else {
             $windSection.append('<span class="card">' + (windDeg + img + windSpeed + cardTime) + '</span>');
         }
-    }
-
-    // Chart
-
-    var labels = [];
-    var temps = [];
-    for (var i = 0; i < jsonData.cnt; i++) {
         var temp = jsonData.temps[i][0];
-        var time = getTime(jsonData.start + (i * 10800)).HH;
         var label = (((time % 12) + (time / 12 > 1 ? " PM" : " AM")));
         labels.push(label);
         temps.push(temp);
@@ -170,7 +165,7 @@ function render(jsonData) {
                     var ctx = this.chart.ctx;
                     ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 'normal', Chart.defaults.global.defaultFontFamily);
                     var fontColor = '#000000';
-                    var labelColor = '#3b3b3b'
+                    var labelColor = '#3b3b3b';
                     ctx.textAlign = 'center';
                     ctx.textBaseline = 'bottom';
                     this.data.datasets.forEach(function (dataset) {
@@ -230,10 +225,10 @@ function renderHTML(data) {
         $("#sunset-svg").html(sunsetTime + ' PM');
 
         var bar = new ProgressBar.Path(sunObject.contentDocument.querySelector('#sun-path'), {
-            duration: 3000
+            duration: 5000
         });
         bar.set(0);
-        bar.animate((data.dt % 86400000) / 86400000);
+        bar.animate(1);
     });
 }
 
